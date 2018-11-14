@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Curiohh</h1>
+
+<p>This is a page to demonstrate the API enpoints created for Curiohh.</p>
+
+<form class="FileUploadForm" action="http://atomiccx.co/api/curiohh/getShowNotes" method=post enctype=multipart/form-data>
+    <p><strong>Transcribe URL:</strong></p>
+      <p>Email:  <input type="text" name=email value="andrew.szwec@gmail.com"> <br><br>
+      <p>Podcast URL:  <input type="text" name=url value="https://storage.googleapis.com/curiohh/podcast.m4a"> <br><br>
+      <input type=submit value=Transcribe>
+  </form>
+  <br>
+  <br>
+  <form class="GetResults" action="http://atomiccx.co/api/curiohh/getResults" method=post enctype=multipart/form-data>
+    <p><strong>Get Results</strong></p>
+      <p>Key:  <input type="text" name=key value="0fe40e82-1994-4d05-bf8d-94b00b7614ef"> <br><br>
+      <input type=submit value=Submit>
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+</body>
+</html>

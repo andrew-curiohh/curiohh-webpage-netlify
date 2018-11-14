@@ -25,7 +25,24 @@
   </head>
 
   <body>
+    <script>
+      var urlParams = new URLSearchParams(window.location.search);
+      var key, query_key;
+      query_key = urlParams.get('key');
+      if (query_key == null){
+        key = "Enter Analysis Key Here...."
+      }
+      else {
+        key = query_key
+      }
       
+      window.onload = function() { 
+        document.getElementById("key").value = key;
+      }
+      
+       
+    </script> 
+  
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark" data-navbar="sticky">
       <div class="container">
@@ -79,32 +96,31 @@
               <h2>Transcribe a podcast...</h2> 
               <br>
 
-              <form class="getShowNotes" action="http://atomiccx.co/api/curiohh/getShowNotes" method=post enctype=multipart/form-data>
+              <form class="getShowNotes" action="https://atomiccx.co/api/curiohh/getShowNotes" method=post enctype=multipart/form-data>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email address" name=email value=andrew.szwec@gmail.com>
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                    </div>
+                  <input type="text" class="form-control" placeholder="Email address" name=email>
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                   </div>
-                  <br>
-       
-                  <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Podcast URL" name=url value=https://storage.googleapis.com/curiohh/podcast.m4a>
-                  </div>
-                <input type=submit value=Transcribe>
-              </form>
-
-              <br>
-              <br>
-              <br>
-              <h2>Get Results</h2> 
-              <form class="GetResults" action="http://atomiccx.co/api/curiohh/getResults" method=post enctype=multipart/form-data>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="GUID KEY" name=key value=56a112c9-c00a-4ef9-9076-c14b3a6ab98c>
                 </div>
                 <br>
-                <input type=submit value=Submit>
+                <!-- <label>Enter email address:</label>
+                <input type=email name=email><br><br> -->
+
+                <div class="form-group">
+                  <!-- <label>Enter podcast URL:</label> -->
+                  <input class="form-control" type="text" placeholder="Podcast URL" name=url>
+                </div>
+
+                <!-- <label>Enter podcast URL:</label> -->
+                <!-- <input type=url name=url><br><br> -->
+                  <!-- <input type=file name=file>  -->
+                  <!-- <input type=submit value=Transcribe> -->
+                <br>
+                <button id="submit-btn" class="btn btn-primary" type="submit">Transcribe</button>
+                <!-- <div class="ProgressBar"><div class="ProgressBar__bar"></div></div> -->
               </form>
+
 
             <!-- End Align Text -->
           </div> 
